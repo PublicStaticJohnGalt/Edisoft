@@ -25,9 +25,9 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         return view('admin/index', array(
-            'tickets' => Ticket::when(!empty($request->get('type')), function($query) use ($request) {
+            'tickets' => Ticket::when(!empty($request->get('type')), function ($query) use ($request) {
                 return $query->where('type', $request->get('type'));
-            })->when(!empty($request->get('priority')), function($query) use ($request) {
+            })->when(!empty($request->get('priority')), function ($query) use ($request) {
                 return $query->where('priority', $request->get('priority'));
             })->orderBy('id', 'DESC')->paginate(20),
         ));
