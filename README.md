@@ -1,78 +1,47 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+## Задание
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Необходимо создать небольшое приложение на Yii 1,2 Framework,Laravel 5,6. Желательно оценить свое время на реализацию задачи и прислать это время ответным письмом.
 
-## About Laravel
+## Приложение для создания заявок. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+На входе мы должны иметь форму с несколькими полями для ввода информации.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Необходимые поля:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Название заявки
+- Тип заявки (Сервисное обслуживание, Поддержка, Запрос технической информации)
+- Приоритет заявки (Низкий, Высокий, Средний)
+- Описание заявки
+- Контактные данные (тел. Почта, ФИО) 
 
-## Learning Laravel
+Заявки и пользователи должны быть в разных таблицах и связаны в моделях.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Форма доступна без регистрации и видна на главной странице. Обязательные поля на усмотрение разработчика.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Со стороны админской панели нужно реализовать:
 
-## Laravel Sponsors
+Обязательно
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- вывод всех заявок с возможностью сортировки по статусам и типам
+- возможность редактировать заявки
+- возможность добавлять комментарии к заявкам при их просмотре/редактировании
+- статус заявки (новая/в работе/ выполнена/отложена/решена)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+На усмотрение разработчика реализовать (одну из фитч, либо все):
 
-## Contributing
+- Возможность учитывать время на выполнение заявки (поле для записи времени при добавлении комментария) вписывается руками по формату “ЧЧ: ММ”
+- Дополнительное второе поле “время работы” с заявкой вписывается автоматически по правилу (если ведется какая-то работа в заявке, она открыта, что-то пишется в поле комментарий, то время считается автоматически и в поле вписывается время, учтенное системой в автоматическом режиме)
+- Если заявку открыли 2 пользователя, то первому дать права полные на редактирование, а второму и далее вывести сообщение, что с заявкой работает такой-то пользователь. И не давать редактировать заявку.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+БД можно использовать SQLite.
 
-## Code of Conduct
+Приложение должно быть собрано на PHP 7+, использовать composer, приложить маленькую инструкцию как его запустить локально. Код разместить на Github || Bitbucket || Gitlab и предоставить ссылку на репозиторий. Придерживаться PSR-2 при написании кода, использовать миграции для БД.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+## Дополнительно описать текстом: 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Описать как сделать очередь заявок и их распределение по сотрудникам компании. При условии, что у каждого сотрудника есть загрузка (равна 100), заявки имеют вес (от 10 до 30), сотрудник может обрабатывать 10 заявок с весом в 10 или 3 весом в 30. Сотрудников 13, заявок может быть до 1000 в сутки, или более.
 
-## License
+Как можно учитывать время на работу с заявкой в автоматическом режиме? Нужно для того, чтобы понимать реальное время, затраченное на заявку сотрудником и сравнивать со временем, которое ввел сотрудник после закрытия заявки.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
