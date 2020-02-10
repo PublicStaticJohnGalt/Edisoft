@@ -1,8 +1,8 @@
 # Тестовое задание для Edisoft
 
 Деплой проекта:
-1. git clone https://github.com/PublicStaticJohnGalt/Edisoft 
-2, Сделать public домашней папкой сайта
+1. git clone https://github.com/PublicStaticJohnGalt/Edisoft
+2. Сделать public домашней папкой сайта
 3. composer install
 4. npm install
 5. php artisan cache:clear
