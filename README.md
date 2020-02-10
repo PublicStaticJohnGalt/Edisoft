@@ -1,5 +1,12 @@
 # Тестовое задание для Edisoft
 
+Деплой проекта:
+1. git clone https://github.com/PublicStaticJohnGalt/Edisoft 
+2, Сделать public домашней папкой сайта
+3. composer install
+4. npm install
+5. php artisan cache:clear
+
 ## Задание
 
 Необходимо создать небольшое приложение на Yii 1,2 Framework,Laravel 5,6. Желательно оценить свое время на реализацию задачи и прислать это время ответным письмом.
